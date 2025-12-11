@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Target date and time (local time)
-  const targetDate = new Date("2026-01-29T16:00:00").getTime();
+  const targetDate = new Date("2026-01-29T15:30:00").getTime();
 
   // Find all countdown containers
   const countdowns = document.querySelectorAll(".jkit-countdown");
@@ -41,6 +41,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update every second
     const interval = setInterval(updateCountdown, 1000);
   });
+
+    const rsvpLink = document.querySelector(".rsvp-div a");
+    const urlParams = new URLSearchParams(window.location.search);
+    const rsrvd = urlParams.get("rsrvd");
+
+    if (rsrvd && rsvpLink) {
+      const baseUrl = "https://tally.so/r/jaZEOa";
+      rsvpLink.href = `${baseUrl}?seats=${encodeURIComponent(rsrvd)}`;
+    }
+
 });
 
 window.addEventListener('scroll', function() {
