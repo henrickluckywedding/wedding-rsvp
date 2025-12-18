@@ -1038,8 +1038,9 @@
 .elementor-654 .elementor-element.elementor-element-d2eed09:not(.elementor-motion-effects-element-type-background)>.elementor-widget-wrap,
 .elementor-654 .elementor-element.elementor-element-d2eed09>.elementor-widget-wrap>.elementor-motion-effects-container>.elementor-motion-effects-layer {
     background-image: url("../images/photoshoot/JES00579.jpg");
-    background-position: 100% 0px;
+    background-position: 50% 0px;
     background-size: cover;
+    height: 100%;
 }
 
 .elementor-654 .elementor-element.elementor-element-d2eed09>.elementor-element-populated {
