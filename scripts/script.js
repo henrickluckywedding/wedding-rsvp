@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Target date and time (local time)
+  /*
+   * Countdown
+   */
   const targetDate = new Date("2026-01-29T15:30:00").getTime();
-
-  // Find all countdown containers
   const countdowns = document.querySelectorAll(".jkit-countdown");
 
   countdowns.forEach(countdown => {
@@ -35,32 +35,110 @@ document.addEventListener("DOMContentLoaded", function () {
       secondsEl.textContent = seconds;
     }
 
-    // Run immediately
     updateCountdown();
-
-    // Update every second
     const interval = setInterval(updateCountdown, 1000);
   });
 
-    const rsvpLink = document.querySelector(".rsvp-div a");
-    const urlParams = new URLSearchParams(window.location.search);
-    const rsrvd = urlParams.get("rsrvd");
+  /*
+   * RSVP link with ?rsrvd=
+   */
+  const rsvpLink = document.querySelector(".rsvp-div a");
+  const urlParams = new URLSearchParams(window.location.search);
+  const rsrvd = urlParams.get("rsrvd");
 
-    if (rsrvd && rsvpLink) {
-      const baseUrl = "https://tally.so/r/jaZEOa";
-      rsvpLink.href = `${baseUrl}?seats=${encodeURIComponent(rsrvd)}`;
-    }
+  if (rsrvd && rsvpLink) {
+    const baseUrl = "https://tally.so/r/jaZEOa";
+    rsvpLink.href = `${baseUrl}?seats=${encodeURIComponent(rsrvd)}`;
+  }
 
+  /*
+   * JS mode flag
+   */
+  document.documentElement.classList.remove("no-js");
+  document.documentElement.classList.add("js");
+
+  const grid = document.querySelector('.gallery-grid');
+
+  imagesLoaded(grid, function () {
+    new Masonry(grid, {
+      itemSelector: '.gallery-item',
+      percentPosition: true,
+      transitionDuration: '0.3s'
+    });
+  });
+const images = Array.from(document.querySelectorAll(".gallery-img"));
+  const modalEl = document.getElementById("galleryModal");
+  const modal = new bootstrap.Modal(modalEl);
+  const lightboxImage = document.getElementById("lightboxImage");
+
+  let currentIndex = 0;
+  let startX = 0;
+
+  function showImage(index) {
+    if (index < 0) index = images.length - 1;
+    if (index >= images.length) index = 0;
+
+    currentIndex = index;
+    lightboxImage.src = images[index].src;
+
+    preload(index + 1);
+    preload(index - 1);
+  }
+
+  function preload(index) {
+    if (index < 0 || index >= images.length) return;
+    const img = new Image();
+    img.src = images[index].src;
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      showImage(index);
+      modal.show();
+    });
+  });
+
+  /* Keyboard navigation */
+  document.addEventListener("keydown", e => {
+    if (!modalEl.classList.contains("show")) return;
+
+    if (e.key === "ArrowRight") showImage(currentIndex + 1);
+    if (e.key === "ArrowLeft") showImage(currentIndex - 1);
+    if (e.key === "Escape") modal.hide();
+  });
+
+  /* Swipe navigation */
+  lightboxImage.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  lightboxImage.addEventListener("touchend", e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (diff > 50) showImage(currentIndex + 1);
+    if (diff < -50) showImage(currentIndex - 1);
+  });
+
+  /* Click outside image closes modal */
+  modalEl.querySelector(".gallery-backdrop-click")
+    .addEventListener("click", () => modal.hide());
+
+  lightboxImage.addEventListener("click", e => e.stopPropagation());
 });
 
-window.addEventListener('scroll', function() {
-  const header = document.getElementById('header');
-  const headerMobile = document.getElementById('headerMobile');
+/*
+ * Header scroll behavior
+ */
+window.addEventListener("scroll", function () {
+  const header = document.getElementById("header");
+  const headerMobile = document.getElementById("headerMobile");
+
+  if (!header || !headerMobile) return;
+
   if (window.scrollY > 50) {
-    header.classList.add('scrolled');
-    headerMobile.classList.add('scrolled');
+    header.classList.add("scrolled");
+    headerMobile.classList.add("scrolled");
   } else {
-    header.classList.remove('scrolled');
-    headerMobile.classList.remove('scrolled');
+    header.classList.remove("scrolled");
+    headerMobile.classList.remove("scrolled");
   }
 });

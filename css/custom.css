@@ -1119,47 +1119,6 @@
     padding: 0% 26% 0% 26%;
 }
 
-.elementor-654 .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap .grid-item .caption-wrap {
-    transition: 500ms;
-}
-
-.elementor-654 .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap .grid-item .caption-wrap.style-overlay.overlay-slide .item-caption-over .item-title {
-    transition: 500ms;
-}
-
-.elementor-654 .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap .grid-item .caption-wrap.style-overlay.overlay-slide .item-caption-over .item-content {
-    transition: 500ms;
-}
-
-.elementor-654 .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap .grid-item .caption-wrap.style-overlay.overlay-zoom .item-caption-over {
-    transition: 500ms;
-}
-
-.elementor-654 .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap .grid-item {
-    margin: 20px 20px 20px 20px;
-}
-
-.elementor-654 .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap .grid-item .caption-wrap .item-hover-bg,
-.elementor-654 .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap:hover .grid-item .caption-wrap.style-overlay {
-    background-color: #63472B;
-}
-
-.elementor-654 .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap:hover .grid-item .caption-wrap.style-overlay {
-    opacity: 0.7;
-}
-
-.elementor-654 .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap .grid-item .caption-wrap .item-hover-bg {
-    opacity: 0.7;
-}
-
-.elementor-654 .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap .grid-item .caption-wrap.style-overlay .item-caption-over {
-    text-align: center;
-}
-
-.elementor-654 .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap:hover .grid-item .video-wrap a {
-    transition: 500ms;
-}
-
 .elementor-654 .elementor-element.elementor-element-ce6010c>.elementor-widget-container {
     margin: 20px 0px 0px 0px;
 }
@@ -2398,10 +2357,6 @@ body:not(.rtl) .elementor-654 .elementor-element.elementor-element-0651ac7 .elem
         padding: 0% 10% 0% 10%;
     }
 
-    .elementor-654 .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap .grid-item {
-        margin: 10px 10px 10px 10px;
-    }
-
     .elementor-654 .elementor-element.elementor-element-5d30001>.elementor-background-overlay {
         background-size: cover;
     }
@@ -3194,27 +3149,6 @@ body:not(.rtl) .elementor-654 .elementor-element.elementor-element-0651ac7 .elem
 
     .elementor-654 .elementor-element.elementor-element-f31bff8>.elementor-widget-container {
         margin: 20px 0px 0px 0px;
-    }
-}
-
-@media (min-width: 1025px) {
-    .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap {
-        width: calc(100% / 3);
-        float: left;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap {
-        width: calc(100% / 0);
-        float: left;
-    }
-}
-
-@media (max-width: 767px) {
-    .elementor-element.elementor-element-ce6010c .jeg-elementor-kit.jkit-gallery .gallery-items .gallery-item-wrap {
-        width: calc(100% / 1);
-        float: left;
     }
 }
 
@@ -4046,4 +3980,187 @@ ul.elementor-icon-list-items {
 .ml-30 {
     margin-left: 30px;
     margin-right: 30px;
+}
+
+/* Section */
+.wedding-gallery {
+  background: #f7f2eb;
+}
+
+/* Title */
+.gallery-title {
+  font-family: 'Playfair Display', serif;
+  color: #5a3e1b;
+  letter-spacing: 0.05em;
+}
+
+/* Divider */
+.divider {
+  width: 60px;
+  height: 2px;
+  background: #b08d57;
+  margin: 12px auto 0;
+}
+
+#photo-gallery img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+#photo-gallery img:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item {
+    margin-bottom: 1rem;
+    width: 25%;
+    padding: 8px;
+}
+
+.gallery-grid {
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .gallery-item { width: 33.333%; }
+}
+
+@media (max-width: 768px) {
+  .gallery-item { width: 50%; }
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+}
+
+.gallery-img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.gallery-modal .modal-dialog {
+  max-width: 95vw;
+}
+
+.gallery-lightbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-lightbox img {
+  max-height: 85vh;
+  max-width: 100%;
+  border-radius: 12px;
+  animation: zoomIn 0.35s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* Controls container awareness */
+.gallery-modal .modal-content {
+  position: relative;
+}
+
+/* Controls positioning */
+.gallery-nav,
+.gallery-close {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Reveal controls only when hovering content */
+.gallery-modal .modal-content:hover .gallery-nav,
+.gallery-modal.show:hover .gallery-close {
+  opacity: 1;
+}
+
+/* Touch devices: lightly visible */
+@media (hover: none) {
+  .gallery-nav,
+  .gallery-close {
+    opacity: 0.5;
+  }
+}
+
+.gallery-nav:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+.gallery-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 1060; /* above modal content + backdrop */
+
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.75);
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  opacity: 0;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.gallery-close:hover {
+  color: white;
+}
+
+/* Close button */
+.gallery-close {
+  top: 18px;
+  right: 22px;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.7);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.gallery-close:hover {
+  color: white;
+}
+
+/* Bootstrap modal backdrop */
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.gallery-lightbox::after {
+  content: "Swipe or use ← → keys";
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.6);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-modal.show:hover .gallery-lightbox::after {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .gallery-lightbox::after {
+    opacity: 0.6;
+  }
+}
+
+.gallery-modal .modal-content {
+  background: transparent;
 }
